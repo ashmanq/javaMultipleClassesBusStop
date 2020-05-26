@@ -12,7 +12,28 @@ public class Bus {
         this.passengers = new ArrayList<Person>();
     }
 
+
     public String getDestination() {
         return this.destination;
+    }
+
+    public int getCapacity() {
+        return this.capacity;
+    }
+
+    public int getPassengerNumber() {
+        return this.passengers.size();
+    }
+
+    public void addPassenger(Person person) {
+        if (this.getPassengerNumber() < this.capacity){
+            this.passengers.add(person);
+        }
+    }
+
+    public void removePassenger(Person person) {
+        if (this.getPassengerNumber() > 0) {
+            this.passengers.remove(0);
+        }
     }
 }
